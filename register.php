@@ -1,8 +1,6 @@
 <?php
 include('connection.php');
 
-$error_message = "";
-
 if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
 
     if (strlen($_POST['nome']) == 0) {
@@ -21,8 +19,7 @@ if (isset($_POST['nome']) || isset($_POST['email']) || isset($_POST['senha'])) {
         $result_check_email = $mysqli->query($sql_check_email);
 
         if ($result_check_email->num_rows > 0) {
-            $error_message = "Este e-mail já está cadastrado";
-            echo '<div class="text-danger mt-3>' . $error_message . '</div>';
+            echo '<div class="text-danger mt-3">Este e-mail já está cadastrado</div>';
         } else {
             $sql_code = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
             $sql_query = $mysqli->query($sql_code) or die("Erro ao registrar usuário: " . $mysqli->error);
