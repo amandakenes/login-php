@@ -59,7 +59,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
                         <label for="senha" class="form-label">Senha:</label>
                         <input type="password" class="form-control" id="senha" name="senha">
                     </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
                 </form>
                 <p class="mt-3">Não tem uma conta? <a href="register.php">Registre-se</a></p>
             </div>
